@@ -62,9 +62,11 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-20">
                     <div className="lg:col-span-1">
                         <div className="flex items-center gap-3 mb-8">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-500 rounded-xl flex items-center justify-center font-bold text-xl md:text-2xl">
-                                AD
-                            </div>
+                            <img 
+                                src="/images/logo.png" 
+                                alt="Advance Dental Care" 
+                                className="h-12 w-auto object-contain"
+                            />
                             <h3 className="text-xl font-display font-bold">Advance Dental Care</h3>
                         </div>
                         <p className="text-slate-400 mb-6 md:mb-8 max-w-xs text-sm italic">
@@ -173,9 +175,11 @@ const Footer = () => {
                             <div className="bg-slate-50 p-6 md:p-8 border-b border-slate-100">
                                 <div className="flex items-center justify-between mb-8">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center text-white font-bold">
-                                            AD
-                                        </div>
+                                        <img 
+                                            src="/images/logo.png" 
+                                            alt="Logo" 
+                                            className="h-10 w-auto object-contain"
+                                        />
                                         <span className="font-display font-bold text-slate-900">Legal Dashboard</span>
                                     </div>
                                     <button

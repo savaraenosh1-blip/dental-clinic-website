@@ -62,9 +62,12 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
                         <div className="flex-shrink-0 flex items-center">
-                            <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center mr-2">
-                                <span className="text-white font-bold text-xl">AD</span>
-                            </div>
+                            <img 
+                                src="/images/logo.png" 
+                                alt="Advance Dental Care" 
+                                className="h-10 w-auto mr-3 object-contain"
+                                loading="eager"
+                            />
                             <div className="hidden sm:block">
                                 <h1 className="text-lg font-display font-bold text-slate-900 leading-tight">
                                     Advance Dental Care
@@ -145,12 +148,13 @@ const Navbar = () => {
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             className="fixed top-0 right-0 bottom-0 w-[80%] max-w-[320px] bg-white z-[100] md:hidden shadow-2xl flex flex-col"
                         >
-                            {/* Drawer Header */}
                             <div className="p-6 border-b border-slate-100 flex items-center justify-between">
                                 <div className="flex items-center">
-                                    <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center mr-3">
-                                        <span className="text-white font-bold text-xl">AD</span>
-                                    </div>
+                                    <img 
+                                        src="/images/logo.png" 
+                                        alt="Logo" 
+                                        className="h-10 w-auto mr-3 object-contain"
+                                    />
                                     <span className="font-display font-bold text-slate-900">Menu</span>
                                 </div>
                                 <button
