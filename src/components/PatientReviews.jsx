@@ -73,14 +73,14 @@ const PatientReviews = () => {
                     </motion.div>
                 </div>
 
-                <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 scrollbar-none md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 mask-fade-right md:mask-none">
+                <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 scrollbar-none md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 mask-fade-right md:mask-none">
                     {reviews.map((review, index) => (
                         <motion.div
                             key={review.name}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="min-w-[260px] md:min-w-0 p-5 md:p-6 rounded-2xl md:rounded-[28px] bg-slate-50 border border-slate-100 relative group hover:bg-white hover:border-primary-100 hover:shadow-xl transition-all duration-500 shrink-0 flex flex-col"
+                            className="min-w-[280px] md:min-w-0 p-6 md:p-8 rounded-[32px] md:rounded-[40px] bg-white border border-slate-100/50 hover:border-white shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:ring-1 hover:ring-slate-100 transition-all duration-300 ease-out group cursor-pointer shrink-0 flex flex-col"
                         >
                             <Quote className="absolute top-4 right-6 text-primary-100 group-hover:text-primary-200 transition-colors" size={32} />
 
