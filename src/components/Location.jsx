@@ -3,7 +3,7 @@ import { MapPin, Navigation, Phone, ExternalLink } from 'lucide-react';
 
 const Location = () => {
     return (
-        <section id="contact" className="py-24 bg-slate-50">
+        <section id="contact" className="py-12 md:py-24 bg-slate-50">
             <div className="section-padding">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <motion.div
@@ -11,38 +11,38 @@ const Location = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                     >
                         <span className="text-primary-600 font-bold uppercase tracking-widest text-sm">Where To Find Us</span>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mt-4 leading-tight">
-                            Visit Our Modern <span className="text-primary-500">Facility</span> in Rupnagar
+                        <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mt-2 md:mt-4 leading-tight">
+                            Visit Our Modern <span className="text-primary-500">Facility</span>
                         </h2>
-                        <p className="text-slate-500 mt-6 text-lg">
-                            We are conveniently located in the heart of Rupnagar, easily accessible from all parts of the city.
+                        <p className="text-slate-500 mt-4 md:mt-6 text-base md:text-lg">
+                            Conveniently located in the heart of Rupnagar, accessible from all parts of the city.
                         </p>
 
-                        <div className="mt-10 space-y-8">
-                            <div className="flex gap-6">
-                                <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center text-primary-500 shrink-0">
-                                    <MapPin size={28} />
+                        <div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                            <div className="flex gap-4 md:gap-6 bg-white p-4 rounded-2xl shadow-sm">
+                                <div className="w-10 h-10 md:w-14 md:h-14 bg-primary-50 rounded-xl flex items-center justify-center text-primary-500 shrink-0">
+                                    <MapPin size={20} className="md:w-7 md:h-7" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900 text-xl">Address</h4>
-                                    <p className="text-slate-500 mt-1 max-w-xs italic">
-                                        Book Market, Giani Zail Singh Nagar, Rupnagar, Punjab 140001
+                                    <h4 className="font-bold text-slate-900 text-base md:text-xl">Address</h4>
+                                    <p className="text-slate-500 text-xs md:text-sm mt-0.5 italic">
+                                        Book Market, G Z S Nagar, Rupnagar
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex gap-6">
-                                <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center text-secondary-500 shrink-0">
-                                    <Phone size={28} />
+                            <div className="flex gap-4 md:gap-6 bg-white p-4 rounded-2xl shadow-sm">
+                                <div className="w-10 h-10 md:w-14 md:h-14 bg-secondary-50 rounded-xl flex items-center justify-center text-secondary-500 shrink-0">
+                                    <Phone size={20} className="md:w-7 md:h-7" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-slate-900 text-xl">Phone</h4>
-                                    <p className="text-slate-500 mt-1">7989474163</p>
+                                    <h4 className="font-bold text-slate-900 text-base md:text-xl">Phone</h4>
+                                    <p className="text-slate-500 text-xs md:text-sm mt-0.5">7989474163</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="mt-12 flex flex-col sm:flex-row gap-4">
+                        <div className="mt-8 md:mt-12 flex flex-col sm:flex-row gap-3">
                             <a
                                 href="https://www.google.com/maps/place/Advance+Dental+Care+Orthodontic+%26+Implant+Centre/@30.9761944,76.5252733,17z/data=!3m1!4b1!4m6!3m5!1s0x390554383a623f2d:0x6b1cc7184c34dc75!8m2!3d30.9761944!4d76.5278482!16s%2Fg%2F11b8262mpy"
                                 target="_blank"
@@ -68,7 +68,7 @@ const Location = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="h-[500px] w-full rounded-[40px] overflow-hidden shadow-2xl border-8 border-white bg-slate-200"
+                        className="h-[250px] md:h-[500px] w-full rounded-3xl md:rounded-[40px] overflow-hidden shadow-xl border-4 md:border-8 border-white bg-slate-200"
                     >
                         {/* Embedded Google Map */}
                         <iframe

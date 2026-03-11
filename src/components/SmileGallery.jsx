@@ -40,9 +40,9 @@ const SmileGallery = () => {
     };
 
     return (
-        <section id="gallery" className="py-24 bg-slate-50">
+        <section id="gallery" className="py-12 md:py-24 bg-slate-50">
             <div className="section-padding">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -53,17 +53,34 @@ const SmileGallery = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-5xl font-display font-bold text-slate-900 mt-4"
+                        className="text-3xl md:text-5xl font-display font-bold text-slate-900 mt-2 md:mt-4"
                     >
                         Real Results, Real Smiles
                     </motion.h2>
-                    <p className="text-slate-500 mt-6 max-w-2xl mx-auto">
-                        Browse through our portfolio of successful dental transformations and see the difference we make.
+                    <p className="text-slate-500 mt-4 md:mt-6 text-base md:text-lg max-w-2xl mx-auto">
+                        Browse through our portfolio of successful dental transformations.
                     </p>
                 </div>
 
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
-                    <div className="lg:col-span-4 space-y-4">
+                    {/* Mobile Horizontal Tabs */}
+                    <div className="lg:hidden flex overflow-x-auto pb-6 scrollbar-none gap-3 -mx-4 px-4 mask-fade-right">
+                        {cases.map((item, i) => (
+                            <button
+                                key={item.title}
+                                onClick={() => setActiveTab(i)}
+                                className={`whitespace-nowrap px-6 py-3 rounded-full font-bold text-sm transition-all border-2 shrink-0 ${activeTab === i
+                                    ? 'bg-primary-500 border-primary-500 text-white shadow-lg'
+                                    : 'bg-white border-slate-100 text-slate-600'
+                                    }`}
+                            >
+                                {item.title.split(' ')[0]} {item.title.split(' ')[1]}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Desktop Sidebar Tabs */}
+                    <div className="hidden lg:block lg:col-span-4 space-y-4">
                         {cases.map((item, i) => (
                             <button
                                 key={item.title}

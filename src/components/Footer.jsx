@@ -5,17 +5,17 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-slate-900 text-white pt-24 pb-12 border-t border-white/5">
+        <footer className="bg-slate-900 text-white pt-12 pb-8 md:pt-24 md:pb-12 border-t border-white/5">
             <div className="section-padding">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-20">
                     <div className="lg:col-span-1">
                         <div className="flex items-center gap-3 mb-8">
-                            <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center font-bold text-2xl">
+                            <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-500 rounded-xl flex items-center justify-center font-bold text-xl md:text-2xl">
                                 AD
                             </div>
                             <h3 className="text-xl font-display font-bold">Advance Dental Care</h3>
                         </div>
-                        <p className="text-slate-400 mb-8 max-w-xs leading-relaxed italic">
+                        <p className="text-slate-400 mb-6 md:mb-8 max-w-xs text-sm italic">
                             Providing premium, personalized dental care with advanced technology and a compassionate touch.
                         </p>
                         <div className="flex gap-4">
@@ -32,10 +32,10 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-8 flex items-center gap-2">
+                        <h4 className="text-lg font-bold mb-4 md:mb-8 flex items-center gap-2">
                             Quick Links <div className="w-10 h-px bg-primary-500/50" />
                         </h4>
-                        <ul className="space-y-4">
+                        <ul className="space-y-3 md:space-y-4">
                             {['Home', 'Services', 'About Clinic', 'Doctors', 'Reviews', 'Gallery'].map((item) => {
                                 const href = item === 'About Clinic' ? '#about' : `#${item.toLowerCase().replace(' ', '')}`;
                                 return (
@@ -51,10 +51,10 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-8 flex items-center gap-2">
+                        <h4 className="text-lg font-bold mb-4 md:mb-8 flex items-center gap-2">
                             Our Services <div className="w-10 h-px bg-primary-500/50" />
                         </h4>
-                        <ul className="space-y-4">
+                        <ul className="space-y-3 md:space-y-4">
                             {['Dental Implants', 'Orthodontics', 'Root Canal', 'Cosmetic Dentistry', 'Teeth Whitening', 'Smile Makeover'].map((item) => (
                                 <li key={item}>
                                     <a href="#services" className="text-slate-400 hover:text-white transition-colors">
@@ -66,10 +66,10 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-lg font-bold mb-8 flex items-center gap-2">
+                        <h4 className="text-lg font-bold mb-4 md:mb-8 flex items-center gap-2">
                             Contact Info <div className="w-10 h-px bg-primary-500/50" />
                         </h4>
-                        <ul className="space-y-6">
+                        <ul className="space-y-4 md:space-y-6">
                             <li className="flex gap-4">
                                 <MapPin className="text-primary-400 shrink-0" size={20} />
                                 <span className="text-slate-400 text-sm">
@@ -88,7 +88,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="pt-8 md:pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
                     <p className="text-slate-500 text-sm italic">
                         © {currentYear} Advance Dental Care Orthodontic & Implant Centre. All rights reserved.
                     </p>

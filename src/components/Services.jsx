@@ -84,7 +84,7 @@ const Services = () => {
     const [selectedService, setSelectedService] = useState(null);
 
     return (
-        <section id="services" className="bg-white py-24 relative overflow-hidden">
+        <section id="services" className="py-12 md:py-24 bg-white relative overflow-hidden">
             <div className="section-padding">
                 <div className="text-center mb-16">
                     <motion.span
@@ -106,7 +106,7 @@ const Services = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 scrollbar-none md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 mask-fade-right md:mask-none">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
@@ -118,16 +118,16 @@ const Services = () => {
                             }}
                             whileHover={{ y: -12, scale: 1.02 }}
                             onClick={() => setSelectedService(service)}
-                            className="p-8 rounded-[40px] bg-white border border-slate-100/50 hover:border-white shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:ring-1 hover:ring-slate-100 transition-all duration-300 ease-out group cursor-pointer"
+                            className="min-w-[280px] md:min-w-0 p-6 md:p-8 rounded-[32px] md:rounded-[40px] bg-white border border-slate-100/50 hover:border-white shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:ring-1 hover:ring-slate-100 transition-all duration-300 ease-out group cursor-pointer shrink-0"
                         >
-                            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                            <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed mb-6 italic">
+                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                            <p className="text-slate-500 text-xs md:text-sm leading-relaxed mb-6 italic line-clamp-2">
                                 {service.description}
                             </p>
-                            <button className="text-primary-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all pointer-events-none">
+                            <button className="text-primary-600 font-bold text-xs md:text-sm flex items-center gap-2 group-hover:gap-3 transition-all pointer-events-none">
                                 Learn More <CircleCheck size={16} />
                             </button>
                         </motion.div>
@@ -170,7 +170,7 @@ const Services = () => {
                             </div>
 
                             {/* Content Side */}
-                            <div className="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto">
+                            <div className="flex-1 overflow-y-auto p-6 md:p-12">
                                 <div className="flex items-center gap-3 mb-6 bg-primary-50 px-4 py-2 rounded-full w-fit">
                                     {selectedService.icon}
                                     <span className="text-primary-600 font-bold text-xs uppercase tracking-widest">Premium Service</span>

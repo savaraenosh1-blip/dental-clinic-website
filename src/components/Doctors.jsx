@@ -68,7 +68,7 @@ const Doctors = () => {
     const [showStaffModal, setShowStaffModal] = useState(false);
 
     return (
-        <section id="doctors" className="py-24 bg-white">
+        <section id="doctors" className="py-12 md:py-24 bg-slate-50">
             <div className="section-padding">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                     <div className="max-w-2xl">
@@ -128,14 +128,14 @@ const Doctors = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-10">
+                <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-3 gap-8 md:gap-10 scrollbar-none md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 mask-fade-right md:mask-none">
                     {doctors.map((doc, index) => (
                         <motion.div
                             key={doc.name}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="group"
+                            className="min-w-[280px] md:min-w-0 group shrink-0"
                         >
                             <div className="relative mb-6 rounded-[32px] overflow-hidden aspect-[4/5] shadow-xl group-hover:shadow-2xl transition-all duration-500">
                                 <img
@@ -159,22 +159,22 @@ const Doctors = () => {
                                 <Award size={14} />
                                 <span>{doc.experience} Experience</span>
                             </div>
-                            <h3 className="text-2xl font-bold text-slate-900 mb-1">{doc.name}</h3>
-                            <p className="text-primary-500 font-semibold text-sm mb-4">{doc.specialization}</p>
-                            <p className="text-slate-500 text-sm leading-relaxed italic">{doc.description}</p>
+                            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-1">{doc.name}</h3>
+                            <p className="text-primary-500 font-semibold text-xs md:text-sm mb-4">{doc.specialization}</p>
+                            <p className="text-slate-500 text-xs md:text-sm leading-relaxed italic line-clamp-2">{doc.description}</p>
                         </motion.div>
                     ))}
-                    <div className="md:hidden mt-8 text-center">
-                        <button
-                            onClick={() => setShowStaffModal(true)}
-                            className="w-full relative px-8 py-4 rounded-2xl overflow-hidden bg-slate-900 text-white font-bold group"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <span className="relative z-10 flex items-center justify-center gap-2">
-                                Meet the Full Team <Sparkles size={18} />
-                            </span>
-                        </button>
-                    </div>
+                </div>
+                <div className="md:hidden mt-4 text-center">
+                    <button
+                        onClick={() => setShowStaffModal(true)}
+                        className="w-full relative px-8 py-4 rounded-2xl overflow-hidden bg-slate-900 text-white font-bold group"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
+                            Meet the Full Team <Sparkles size={18} />
+                        </span>
+                    </button>
                 </div>
 
                 {/* Staff Showcase Modal */}
@@ -213,7 +213,7 @@ const Doctors = () => {
                                     </button>
                                 </div>
                                 {/* Modal Content - Staff Grid */}
-                                <div className="flex-1 overflow-y-auto p-8 md:p-12">
+                                <div className="flex-1 overflow-y-auto p-6 md:p-12">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                         {allStaff.map((staff, i) => (
                                             <motion.div

@@ -63,13 +63,13 @@ const WhyChooseUs = () => {
     ];
 
     return (
-        <section id="about" className="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <section id="about" className="py-10 md:py-24 bg-slate-900 text-white overflow-hidden relative">
             {/* Decorative Accents */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl" />
 
             <div className="section-padding">
-                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
                     <div>
                         <motion.span
                             initial={{ opacity: 0 }}
@@ -81,15 +81,15 @@ const WhyChooseUs = () => {
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            className="text-4xl md:text-5xl font-display font-bold mt-4 leading-tight"
+                            className="text-3xl md:text-5xl font-display font-bold mt-2 md:mt-4 leading-tight"
                         >
                             We Believe Everyone Deserves a <span className="text-primary-400">Perfect Smile</span>
                         </motion.h2>
-                        <p className="text-slate-400 mt-6 text-lg leading-relaxed">
-                            At Advance Dental Care, we combine artistry with science. Our mission is to provide world-class dental solutions that are accessible, pain-free, and life-changing.
+                        <p className="text-slate-400 mt-3 md:mt-6 text-sm md:text-lg leading-relaxed italic">
+                            At Advance Dental Care, we combine artistry with science to provide world-class dental solutions.
                         </p>
 
-                        <div className="mt-12 grid sm:grid-cols-2 gap-8">
+                        <div className="mt-6 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
                             {reasons.slice(0, 4).map((reason, i) => (
                                 <motion.div
                                     key={reason.title}
@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
                                     <motion.div
                                         variants={{
                                             hover: {
-                                                scale: 1.2,
+                                                scale: 1.1,
                                                 rotate: [0, -10, 10, -10, 0],
                                                 transition: {
                                                     type: "spring",
@@ -112,7 +112,7 @@ const WhyChooseUs = () => {
                                                 }
                                             }
                                         }}
-                                        className="w-12 h-12 bg-white/10 rounded-xl flex-shrink-0 flex items-center justify-center relative overflow-hidden"
+                                        className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl flex-shrink-0 flex items-center justify-center relative overflow-hidden text-primary-400"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                                         <motion.div
@@ -131,11 +131,11 @@ const WhyChooseUs = () => {
                                             variants={{
                                                 hover: { y: -2, color: '#38bdf8' }
                                             }}
-                                            className="font-bold text-lg mb-1 transition-colors"
+                                            className="font-bold text-base md:text-lg mb-0.5 transition-colors"
                                         >
                                             {reason.title}
                                         </motion.h4>
-                                        <p className="text-slate-400 text-sm italic">{reason.text}</p>
+                                        <p className="text-slate-400 text-xs italic leading-tight">{reason.text}</p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -146,7 +146,7 @@ const WhyChooseUs = () => {
                                 setActiveTab('info');
                                 setShowClinicModal(true);
                             }}
-                            className="mt-12 group relative"
+                            className="mt-6 md:mt-12 group relative scale-90 md:scale-100 origin-left"
                         >
                             <div className="absolute inset-0 bg-primary-400/20 rounded-full blur-xl group-hover:bg-primary-400/40 transition-all duration-300 opacity-0 group-hover:opacity-100" />
                             <div className="relative p-[2px] bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full">
@@ -179,10 +179,10 @@ const WhyChooseUs = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut"
                             }}
-                            className="absolute -bottom-10 -right-10 bg-primary-500 p-10 rounded-full flex flex-col items-center justify-center shadow-2xl z-20 hidden sm:flex border-4 border-slate-900 will-change-transform"
+                            className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-primary-500 p-6 md:p-10 rounded-full flex flex-col items-center justify-center shadow-2xl z-20 hidden sm:flex border-4 border-slate-900 will-change-transform"
                         >
-                            <span className="text-4xl font-bold">10+</span>
-                            <span className="text-xs font-bold uppercase tracking-widest text-primary-100">Years</span>
+                            <span className="text-2xl md:text-4xl font-bold">10+</span>
+                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-primary-100">Years</span>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -229,7 +229,7 @@ const WhyChooseUs = () => {
                                 <div className="absolute inset-0 bg-primary-500/10 mix-blend-multiply" />
                             </div>
 
-                            <div className="w-full lg:w-2/3 p-6 lg:p-10 overflow-y-auto">
+                            <div className="flex-1 overflow-y-auto p-6 md:p-12">
                                 {/* Tab Navigation */}
                                 <div className="flex gap-4 border-b border-white/5 mb-8">
                                     {['info', 'facilities'].map((tab) => (

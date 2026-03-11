@@ -138,8 +138,8 @@ const Navbar = () => {
                                     <a
                                         key={link.name}
                                         href={link.href}
-                                        className={`block px-3 py-3 text-base font-medium rounded-lg transition-all ${isActive
-                                            ? 'text-primary-600 bg-primary-50'
+                                        className={`block px-4 py-4 text-lg font-bold rounded-2xl transition-all ${isActive
+                                            ? 'text-primary-600 bg-primary-50 shadow-sm'
                                             : 'text-slate-700 hover:text-primary-500 hover:bg-slate-50'
                                             }`}
                                         onClick={() => setIsOpen(false)}

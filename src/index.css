@@ -50,6 +50,6 @@ html {
   }
 
   .section-padding {
-    @apply py-20 px-4 md:px-8 max-w-7xl mx-auto;
+    @apply py-10 md:py-20 px-4 md:px-8 max-w-7xl mx-auto;
   }
 }

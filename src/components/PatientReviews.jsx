@@ -34,7 +34,7 @@ const reviews = [
 
 const PatientReviews = () => {
     return (
-        <section id="reviews" className="py-24 bg-white overflow-hidden">
+        <section id="reviews" className="py-12 md:py-24 bg-white overflow-hidden">
             <div className="section-padding">
                 <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
                     <div className="max-w-xl text-center md:text-left">
@@ -57,10 +57,10 @@ const PatientReviews = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        className="bg-slate-50 p-8 rounded-[32px] border border-slate-100 flex items-center gap-6 shadow-xl shadow-slate-200/50"
+                        className="bg-slate-50 p-5 md:p-6 rounded-2xl md:rounded-[24px] border border-slate-100 flex items-center gap-4 md:gap-6 shadow-lg shadow-slate-200/50"
                     >
                         <div className="text-center">
-                            <div className="text-4xl font-bold text-slate-900">4.9</div>
+                            <div className="text-2xl md:text-3xl font-bold text-slate-900">4.9</div>
                             <div className="flex text-yellow-500 mt-1">
                                 {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                             </div>
@@ -73,27 +73,27 @@ const PatientReviews = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 scrollbar-none md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 mask-fade-right md:mask-none">
                     {reviews.map((review, index) => (
                         <motion.div
                             key={review.name}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="p-8 rounded-[32px] bg-slate-50 border border-slate-100 relative group hover:bg-white hover:border-primary-100 hover:shadow-2xl transition-all duration-500"
+                            className="min-w-[260px] md:min-w-0 p-5 md:p-6 rounded-2xl md:rounded-[28px] bg-slate-50 border border-slate-100 relative group hover:bg-white hover:border-primary-100 hover:shadow-xl transition-all duration-500 shrink-0 flex flex-col"
                         >
-                            <Quote className="absolute top-6 right-8 text-primary-100 group-hover:text-primary-200 transition-colors" size={48} />
+                            <Quote className="absolute top-4 right-6 text-primary-100 group-hover:text-primary-200 transition-colors" size={32} />
 
-                            <div className="flex text-yellow-500 mb-6">
+                            <div className="flex text-yellow-500 mb-4">
                                 {[...Array(review.rating)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                             </div>
 
-                            <p className="text-slate-600 text-sm leading-relaxed mb-8 relative z-10 italic">
+                            <p className="text-slate-600 text-xs md:text-sm leading-relaxed mb-6 relative z-10 italic">
                                 "{review.text}"
                             </p>
 
                             <div className="flex items-center gap-4 mt-auto">
-                                <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                                <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-md shrink-0">
                                     {review.avatar}
                                 </div>
                                 <div>
