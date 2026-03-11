@@ -122,36 +122,68 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu - Side Drawer */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
-                    >
-                        <div className="px-4 pt-2 pb-6 space-y-2">
-                            {navLinks.map((link) => {
-                                const isActive = activeSection === link.href.replace('#', '');
-                                return (
-                                    <a
-                                        key={link.name}
-                                        href={link.href}
-                                        className={`block px-4 py-4 text-lg font-bold rounded-2xl transition-all ${isActive
-                                            ? 'text-primary-600 bg-primary-50 shadow-sm'
-                                            : 'text-slate-700 hover:text-primary-500 hover:bg-slate-50'
-                                            }`}
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        {link.name}
-                                    </a>
-                                );
-                            })}
-                            <div className="pt-4 px-3">
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
+                            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[55] md:hidden"
+                        />
+
+                        {/* Drawer */}
+                        <motion.div
+                            initial={{ x: '100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed top-0 right-0 bottom-0 w-[80%] max-w-[320px] bg-white z-[60] md:hidden shadow-2xl flex flex-col"
+                        >
+                            {/* Drawer Header */}
+                            <div className="p-6 border-b border-slate-100 flex items-center justify-between">
+                                <div className="flex items-center">
+                                    <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center mr-3">
+                                        <span className="text-white font-bold text-xl">AD</span>
+                                    </div>
+                                    <span className="font-display font-bold text-slate-900">Menu</span>
+                                </div>
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="p-2 text-slate-400 hover:text-slate-900 transition-colors"
+                                >
+                                    <X size={24} />
+                                </button>
+                            </div>
+
+                            {/* Nav Links */}
+                            <div className="flex-1 overflow-y-auto p-6 space-y-2">
+                                {navLinks.map((link) => {
+                                    const isActive = activeSection === link.href.replace('#', '');
+                                    return (
+                                        <a
+                                            key={link.name}
+                                            href={link.href}
+                                            className={`flex items-center px-4 py-4 text-lg font-bold rounded-2xl transition-all ${isActive
+                                                ? 'text-primary-600 bg-primary-50 shadow-sm'
+                                                : 'text-slate-700 hover:text-primary-500 hover:bg-slate-50'
+                                                }`}
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            {link.name}
+                                        </a>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Drawer Footer */}
+                            <div className="p-6 border-t border-slate-100">
                                 <a
                                     href="#appointment"
-                                    className={`w-full btn-primary flex items-center justify-center gap-2 transition-all duration-300 ${activeSection === 'appointment'
+                                    className={`w-full btn-primary flex items-center justify-center gap-2 transition-all duration-300 py-4 ${activeSection === 'appointment'
                                         ? 'ring-4 ring-primary-500/30'
                                         : ''
                                         }`}
@@ -161,8 +193,8 @@ const Navbar = () => {
                                     <span>Book Appointment</span>
                                 </a>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </nav>
