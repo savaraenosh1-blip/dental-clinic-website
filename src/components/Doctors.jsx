@@ -128,7 +128,7 @@ const Doctors = () => {
                     </motion.div>
                 </div>
 
-                <div className="flex overflow-x-auto pb-8 md:grid md:grid-cols-3 gap-8 md:gap-10 scrollbar-none md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 mask-fade-right md:mask-none">
+                <div className="flex items-start overflow-x-auto pb-8 md:grid md:grid-cols-3 gap-8 md:gap-10 scrollbar-none md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 mask-fade-right md:mask-none">
                     {doctors.map((doc, index) => (
                         <motion.div
                             key={doc.name}
@@ -137,7 +137,7 @@ const Doctors = () => {
                             transition={{ delay: index * 0.1 }}
                             className="min-w-[280px] md:min-w-0 group shrink-0"
                         >
-                            <div className="relative mb-6 rounded-[32px] overflow-hidden aspect-[4/5] shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                            <div className="relative mb-6 rounded-[32px] overflow-hidden w-full h-[320px] md:h-auto md:aspect-[4/5] shadow-xl group-hover:shadow-2xl transition-all duration-500">
                                 <img
                                     src={doc.image}
                                     alt={doc.name}
